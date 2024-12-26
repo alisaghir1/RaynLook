@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@font-face {
+  font-family: "Antique Olive";
+  src: url("./fonts/91846.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Franklin Gothic Book";
+  src: url("./fonts/FRABKIT.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: "Antique Olive", sans-serif;
+}
+
+body,p{
+font-family: 'Franklin Gothic Book', sans-serif;
+}

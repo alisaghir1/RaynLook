@@ -1,15 +1,12 @@
 import Image from "next/image";
 import hero from "../public/Hero.jpg";
 import Head from "next/head";
+import FirstSection from "./components/FirstSection/FirstSection";
 
 export default function Home() {
   return (
+    <>
     <div className="h-screen relative">
-      <Head>
-        <title>My Page Title</title>
-        <meta name="description" content="This is the description of my page" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <div className="absolute inset-0">
         <Image
           className="absolute z-[-10] top-0 right-0 w-full h-full xl:object-cover opacity-50"
@@ -24,5 +21,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+    <FirstSection />
+    </>
   );
 }

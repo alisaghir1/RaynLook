@@ -10,7 +10,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        customGold:'#B5A300',
+        customGold:'#CBB26A',
       },
     },
   },

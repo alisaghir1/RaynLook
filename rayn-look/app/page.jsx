@@ -17,10 +17,10 @@ export default function Home() {
           alt="hero image"
         />
       </div>
-      <div className="flex justify-center items-center h-full text-center z-10 relative">
+      <div className="flex justify-center items-center h-full text-center z-10 relative mx-2">
         <div className="">
-          <h1 className="text-5xl font-bold mb-4 text-white">Natural Beauty, Perfect Vision</h1>
-          <p className="text-lg text-gold">Transform Your Look with Lebanon&apos;s Finest Natural Contact Lenses</p>
+          <h1 className="text-4xl font-bold mb-4 text-white">Natural Beauty, Perfect Vision</h1>
+          <p className="text-lg text-customGold">Transform Your Look with Lebanon&apos;s Finest Natural Contact Lenses</p>
         </div>
       </div>
     </div>

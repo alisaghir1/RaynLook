@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 @font-face {
   font-family: "Antique Olive";
@@ -21,13 +17,6 @@
   font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   color: var(--foreground);
   background: #222222;
@@ -41,3 +30,4 @@ h1,h2,h3,h4,h5{
 body,p{
 font-family: 'Franklin Gothic Book', sans-serif;
 }
+

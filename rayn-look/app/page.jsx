@@ -1,6 +1,5 @@
 import Image from "next/image";
 import hero from "../public/Hero.jpg";
-import Head from "next/head";
 import FirstSection from "./components/FirstSection/FirstSection";
 
 export default function Home() {

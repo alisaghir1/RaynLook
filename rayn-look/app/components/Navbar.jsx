@@ -27,7 +27,7 @@ const Navbar = () => {
           <Image
             width={200}
             height={120}
-            src="/logo.png"
+            src="/logo.jpeg"
             className="mr-3 h-20 w-52"
             alt="Logo"
           />

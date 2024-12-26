@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 @font-face {
   font-family: "Antique Olive";
   src: url("./fonts/91846.ttf") format("truetype");

@@ -15,12 +15,12 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 export default function SecondSection() {
   return (
-    <div className='bg-black my-20 '>
+    <div className='bg-gradient-to-b from-white via-white to-white py-20 '>
       <div className='max-w-6xl  text-center px-10 mx-auto xl:px-0 text-white container'>
-      <h1 className='text-3xl'>
+      <h1 className='text-3xl text-customGold'>
       Celebrity Favorite Contact Lenses
       </h1>
-      <p className="mb-12 text-xl text-customGold">  Rayn Look has become the go-to store for celebrities seeking premium contact lenses. Our lenses are designed not only to enhance your vision but also to complement your unique style. With a wide range of colors and designs, you’ll experience comfort and sophistication that is loved by stars and influencers around the world. Get ready to transform your look with lenses trusted by the best in the business.</p>
+      <p className="mb-12 text-xl text-black">  Rayn Look has become the go-to store for celebrities seeking premium contact lenses. Our lenses are designed not only to enhance your vision but also to complement your unique style. With a wide range of colors and designs, you’ll experience comfort and sophistication that is loved by stars and influencers around the world. Get ready to transform your look with lenses trusted by the best in the business.</p>
       </div>
       <Swiper
         effect={'coverflow'}

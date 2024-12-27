@@ -12,7 +12,8 @@ export default {
         foreground: "var(--foreground)",
         customGold:'#CBB26A',
         black: '#222222',
-        dark: 'black'
+        dark: 'black',
+        white:'#F0F8FF'
       },
     },
   },

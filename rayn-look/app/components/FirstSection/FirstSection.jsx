@@ -2,7 +2,7 @@ import React from 'react'
 
 const FirstSection = () => {
   return (
-    <div className="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
+    <div className="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5 mb-20">
       <h2 className="mb-1 text-3xl font-extrabold leading-tight text-white mt-10">Our Services</h2>
       <p className="mb-12 text-xl text-customGold">Here are a few of the excellent services we provide at Rayn Look.</p>
       <div className="w-full">

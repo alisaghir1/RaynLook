@@ -1,44 +1,48 @@
-'use client'
-import React from 'react';
+"use client";
+import React from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay'; // Import autoplay styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/autoplay"; // Import autoplay styles
 
-import './secondSection.css';
+import "./secondSection.css";
 
 // import required modules
-import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 
 export default function SecondSection() {
   return (
-    <div className='bg-white py-20 '>
-      <div className='max-w-6xl text-center px-10 mx-auto xl:px-0 text-white container'>
-        <h1 className='text-3xl text-customGold'>
+    <div className="bg-white py-20 ">
+      <div className="max-w-6xl text-center px-10 mx-auto xl:px-0 text-white container">
+        <h1 className="text-3xl text-customGold">
           Celebrity Favorite Contact Lenses
         </h1>
         <p className="mb-12 text-xl text-black">
-          Rayn Look has become the go-to store for celebrities seeking premium contact lenses. Our lenses are designed not only to enhance your vision but also to complement your unique style. With a wide range of colors and designs, you’ll experience comfort and sophistication that is loved by stars and influencers around the world. Get ready to transform your look with lenses trusted by the best in the business.
+          Rayn Look has become the go-to store for celebrities seeking premium
+          contact lenses. Our lenses are designed not only to enhance your
+          vision but also to complement your unique style. With a wide range of
+          colors and designs, you’ll experience comfort and sophistication that
+          is loved by stars and influencers around the world. Get ready to
+          transform your look with lenses trusted by the best in the business.
         </p>
       </div>
       <Swiper
         initialSlide={3}
-        effect={'coverflow'}
+        effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'}
+        slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
           depth: 100,
           modifier: 1,
           slideShadows: true,
-          
         }}
         autoplay={{
           delay: 2000, // Delay between slides in milliseconds
@@ -49,31 +53,85 @@ export default function SecondSection() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image className='h-full object-cover' width={450} height={300} src="/hero.jpg" alt='carousel-image' />
+          <Image
+            className="h-full object-cover"
+            width={450}
+            height={300}
+            src="/hero.jpg"
+            alt="carousel-image"
+          />
         </SwiperSlide>
       </Swiper>
     </div>

@@ -21,7 +21,8 @@ export const metadata = {
   title: "Rayn Look - Premium Contact Lenses",
   description:
     "Experience unparalleled comfort and style with Rayn Look's premium contact lenses. Designed for natural beauty and exceptional vision, discover Lebanon's finest lenses today.",
-  keywords: "contact lenses, natural lenses, premium lenses, Rayn Look, Lebanon, eye comfort, fashion lenses",
+  keywords:
+    "contact lenses, natural lenses, premium lenses, Rayn Look, Lebanon, eye comfort, fashion lenses",
   author: "Rayn Look",
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",

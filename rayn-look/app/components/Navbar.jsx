@@ -5,6 +5,8 @@ import { CiMenuFries } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
+import { zoomIn } from "@/variants";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +23,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="py-4">
+    <motion.nav
+      variants={zoomIn("up", 0.8)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.4 }}
+      className="py-4"
+    >
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
         <Link href="/" className="flex items-center">
           <Image
@@ -48,10 +56,14 @@ const Navbar = () => {
           >
             <span className="sr-only">Open main menu</span>
             <CiMenuFries
-              className={`w-6 h-6 ${isMenuOpen ? "hidden" : ""} transition-all duration-300 ease-in-out`}
+              className={`w-6 h-6 ${
+                isMenuOpen ? "hidden" : ""
+              } transition-all duration-300 ease-in-out`}
             />
             <IoMdClose
-              className={`w-6 h-6 outline-none ${!isMenuOpen ? "hidden" : ""} transition-all duration-300 ease-in-out`}
+              className={`w-6 h-6 outline-none ${
+                !isMenuOpen ? "hidden" : ""
+              } transition-all duration-300 ease-in-out`}
             />
           </button>
         </div>
@@ -72,7 +84,10 @@ const Navbar = () => {
               <li key={link.name}>
                 <Link
                   href={link.path}
-                  onClick={() => [handleLinkClick(link.name), setIsMenuOpen(false)]}
+                  onClick={() => [
+                    handleLinkClick(link.name),
+                    setIsMenuOpen(false),
+                  ]}
                   className={`block py-2 pl-3 pr-4 ${
                     activeLink === link.name
                       ? "bg-customGold text-white lg:bg-transparent lg:text-customGold"
@@ -86,7 +101,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

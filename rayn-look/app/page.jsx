@@ -1,10 +1,13 @@
+"use client";
 import Image from "next/image";
 import hero from "../public/Hero.jpg";
 import FirstSection from "./components/firstSection/FirstSection";
-import SecondSection from './components/secondSection/SecondSection'
+import SecondSection from "./components/secondSection/SecondSection";
 import ThirdSection from "./components/thirdSection/ThirdSection";
 import Footer from "./components/Footer";
 import Link from "next/link";
+import { slideIn } from "@/variants";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -19,12 +22,36 @@ export default function Home() {
         </div>
         <div className="flex justify-center items-center h-full text-center z-10 relative mx-2">
           <div className="">
-            <h1 className="text-5xl font-bold mb-4 text-white">Natural Beauty, Perfect Vision</h1>
-            <p className="text-lg text-customGold">Transform Your Look with Lebanon&apos;s Finest Natural Contact Lenses</p>
-            <Link href={'/products'}>
-              <button className="bg-customGold text-xl px-5 py-2 rounded-lg mt-5 hover:bg-black hover:text-customGold transition-all duration-300 ease-in-out">
-                Shop Now
-              </button>
+            <motion.h1
+              variants={slideIn("down", 0.6)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.4 }}
+              className="text-5xl font-bold mb-4 text-white"
+            >
+              Natural Beauty, Perfect Vision
+            </motion.h1>
+            <motion.p
+              variants={slideIn("up", 0.8)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.4 }}
+              className="text-lg text-customGold"
+            >
+              Transform Your Look with Lebanon&apos;s Finest Natural Contact
+              Lenses
+            </motion.p>
+            <Link href={"/products"}>
+              <motion.div
+                variants={slideIn("up", 1)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.4 }}
+              >
+                <button className="bg-customGold text-xl px-5 py-2 rounded-lg mt-5 hover:bg-black hover:text-customGold transition-all duration-300 ease-in-out">
+                  Shop Now
+                </button>
+              </motion.div>
             </Link>
           </div>
         </div>

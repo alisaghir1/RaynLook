@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
+import { slideIn } from "@/variants";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
@@ -19,17 +21,29 @@ export default function SecondSection() {
   return (
     <div className="bg-white py-20 ">
       <div className="max-w-6xl text-center px-10 mx-auto xl:px-0 text-white container">
-        <h1 className="text-3xl text-customGold">
+        <motion.h1
+          variants={slideIn("down", 0.6)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.4 }}
+          className="text-3xl text-customGold"
+        >
           Celebrity Favorite Contact Lenses
-        </h1>
-        <p className="mb-12 text-xl text-black">
+        </motion.h1>
+        <motion.p
+          variants={slideIn("up", 0.8)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.4 }}
+          className="mb-12 text-xl text-black"
+        >
           Rayn Look has become the go-to store for celebrities seeking premium
           contact lenses. Our lenses are designed not only to enhance your
           vision but also to complement your unique style. With a wide range of
           colors and designs, you’ll experience comfort and sophistication that
           is loved by stars and influencers around the world. Get ready to
           transform your look with lenses trusted by the best in the business.
-        </p>
+        </motion.p>
       </div>
       <Swiper
         initialSlide={3}

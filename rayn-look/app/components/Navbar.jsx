@@ -26,9 +26,9 @@ const Navbar = () => {
         <Link href="/" className="flex items-center">
           <Image
             width={200}
-            height={120}
-            src="/logo1.png"
-            className="mr-3 h-10 w-36"
+            height={200}
+            src="/logo.svg"
+            className="mr-3 h-14 w-44"
             alt="Logo"
           />
         </Link>

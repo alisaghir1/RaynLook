@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,7 +16,7 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 export default function SecondSection() {
   return (
-    <div className='bg-gradient-to-b from-white via-white to-white py-20 '>
+    <div className='bg-white py-20 '>
       <div className='max-w-6xl  text-center px-10 mx-auto xl:px-0 text-white container'>
       <h1 className='text-3xl text-customGold'>
       Celebrity Favorite Contact Lenses
@@ -39,31 +40,31 @@ export default function SecondSection() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <Image className='h-full object-cover' width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <Image className='h-full object-cover' width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <Image className='h-full object-cover' width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <Image className='h-full object-cover' width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <Image className='h-full object-cover' width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <Image className='h-full object-cover' width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <Image className='h-full object-cover' width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <Image className='h-full object-cover' width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+          <Image className='h-full object-cover'  width={500} height={500} src="/hero.jpg" alt='carousel-image' />
         </SwiperSlide>
       </Swiper>
     </div>

@@ -2,6 +2,8 @@ import Image from "next/image";
 import hero from "../public/Hero.jpg";
 import FirstSection from "./components/firstSection/FirstSection";
 import SecondSection from './components/secondSection/SecondSection'
+import ThirdSection from "./components/thirdSection/ThirdSection";
+import Footer from "./components/Footer";
 import Link from "next/link";
 
 export default function Home() {
@@ -29,6 +31,9 @@ export default function Home() {
       </div>
       <FirstSection />
       <SecondSection />
+      <ThirdSection />
+
+      <Footer />
     </>
   );
 }

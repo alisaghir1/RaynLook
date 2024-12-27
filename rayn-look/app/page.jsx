@@ -1,6 +1,8 @@
 import Image from "next/image";
 import hero from "../public/Hero.jpg";
-import FirstSection from "./components/FirstSection/FirstSection";
+import FirstSection from "./components/firstSection/FirstSection";
+import SecondSection from './components/secondSection/SecondSection'
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -17,10 +19,14 @@ export default function Home() {
         <div className="">
           <h1 className="text-5xl font-bold mb-4 text-white">Natural Beauty, Perfect Vision</h1>
           <p className="text-lg text-customGold">Transform Your Look with Lebanon&apos;s Finest Natural Contact Lenses</p>
+          <Link href={'/products'}>
+          <button className="bg-customGold text-xl px-5 py-2 rounded-lg mt-5 hover:bg-black hover:text-customGold transition-all duration-300 ease-in-out">Shop Now</button>
+          </Link>
         </div>
       </div>
     </div>
     <FirstSection />
+    <SecondSection />
     </>
   );
 }

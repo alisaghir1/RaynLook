@@ -11,7 +11,8 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         customGold:'#CBB26A',
-        black: '#222222'
+        black: '#222222',
+        dark: 'black'
       },
     },
   },

@@ -13,6 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  icons: {
+    icon: "/logo.svg", // Standard favicon
+    apple: "/logo.svg", // Apple touch icon
+    maskIcon: { href: "/logo.svg", color: "#CBB26A" }, // Safari pinned tab
+  },
   title: "Rayn Look - Premium Contact Lenses",
   description:
     "Experience unparalleled comfort and style with Rayn Look's premium contact lenses. Designed for natural beauty and exceptional vision, discover Lebanon's finest lenses today.",

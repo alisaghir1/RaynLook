@@ -1,114 +1,102 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeIn, slideIn, zoomIn } from "@/variants";
+import {  slideIn, zoomIn } from "@/variants";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import { FaShippingFast } from "react-icons/fa";
+import { FaStar } from "react-icons/fa6";
+import { GiUsaFlag } from "react-icons/gi";
 
 const ThirdSection = () => {
   return (
-    <div className="">
+    <div className="bg-url('/hero.jpg)">
       <motion.div
         variants={zoomIn("down", 1)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.4 }}
-        className="my-20 bg-black text-white"
+        className="my-10 bg-black text-white flex flex-col xl:flex-row mx-5 gap-10 justify-center items-center"
       >
-        <h1 className="text-3xl text-center">Why Choose Rayn Look?</h1>
+        <div className="flex flex-col ">
+        <h2 className="text-xl text-center text-customGold flex justify-center items-center gap-2"><span className="text-white"><FaShippingFast /></span>World wide Shipping</h2>
+        <p className=" text-center text-white text-sm">We deliver to your doorstep, no matter where you are!</p>
+        </div>
+        <div className="flex flex-col  text-center">
+        <h2 className="text-xl text-center text-customGold flex justify-center items-center gap-2"><span className="text-white"><MdOutlineSupportAgent /></span>24/7 Customer Support</h2>
+        <p className=" text-center text-white text-sm">Our team is always here to assist you anytime, anywhere.</p>
+        </div>
+        <div className="flex flex-col  text-center">
+        <h2 className="text-xl text-center text-customGold flex justify-center items-center gap-2"><span className="text-white"><GiUsaFlag /></span>Made in USA</h2>
+        <p className=" text-center text-white text-sm">Experience the finest craftsmanship backed by the highest standards.</p>
+        </div>
+        <div className="flex flex-col  text-center">
+        <h2 className="text-xl text-center text-customGold flex justify-center items-center gap-2"><span className="text-white"><FaStar /></span>Top-Rated in Lebanon</h2>
+        <p className=" text-center text-white text-sm">Proud to be rated #1 for quality and service in Lebanon!</p>
+        </div>
       </motion.div>
       <div className="bg-white text-customGold py-20">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mx-4 lg:px-20">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 mx-4 lg:px-20 text-center">
           {/* Question 1 */}
           <motion.div
-            variants={slideIn("left", 0.8)}
+            variants={slideIn("down", 0.6)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.4 }}
-            className="p-6 shadow-lg rounded-xl"
+            className="shadow-lg border py-4"
           >
-            <h2 className="text-2xl font-semibold text-customBg mb-4">
-              Why Choose Rayn Look for Your Contact Lenses?
+            <h2 className="text-4xl font-semibold text-customBg mb-4">
+             600000
             </h2>
-            <p className="text-black">
-              Rayn Look offers premium quality lenses designed for comfort,
-              clarity, and natural beauty. We focus on providing exceptional
-              customer service and a wide variety of lenses to suit your style
-              and vision needs.
+            <p className="text-black text-2xl">
+              Social Media Followers
             </p>
           </motion.div>
 
           {/* Question 2 */}
           <motion.div
-            variants={slideIn("down", 1)}
+            variants={slideIn("down", 0.6)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.4 }}
-            className="p-6 shadow-lg rounded-xl"
+            className="shadow-lg  border py-4"
           >
-            <h2 className="text-2xl font-semibold text-customBg mb-4">
-              What Makes Rayn Look’s Lenses Different?
+            <h2 className="text-4xl font-semibold text-customBg mb-4">
+            12000
             </h2>
-            <p className="text-black">
-              Our lenses are crafted from high-quality materials that ensure
-              comfort all day long. The unique design of our lenses allows for a
-              natural look while enhancing your eye color and providing
-              crystal-clear vision.
+            <p className="text-black text-2xl">
+            5-Star Reviews <span className="text-customGold"> ★★★★★ </span>
             </p>
           </motion.div>
 
           {/* Question 3 */}
           <motion.div
-            variants={slideIn("right", 0.8)}
+            variants={slideIn("left", 0.8)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.4 }}
-            className="p-6 shadow-lg rounded-xl"
+            className="shadow-lg border py-4"
           >
-            <h2 className="text-2xl font-semibold text-customBg mb-4">
-              How Long Can I Wear Rayn Look Contact Lenses?
+            <h2 className="text-4xl font-semibold text-customBg mb-4">
+            30000
             </h2>
-            <p className="text-black">
-              Our lenses are designed for long-lasting comfort and can be worn
-              for up to 1 year. With proper care and maintenance, they offer
-              excellent performance throughout the year, ensuring clear vision
-              and comfort.
+            <p className="text-black text-2xl">
+            Happy Customers
             </p>
           </motion.div>
 
           {/* Question 4 */}
           <motion.div
-            variants={slideIn("left", 0.8)}
+            variants={slideIn("right", 0.8)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.4 }}
-            className="p-6 shadow-lg rounded-xl"
+            className="shadow-lg border py-4"
           >
-            <h2 className="text-2xl font-semibold text-customBg mb-4">
-              Are Rayn Look Lenses Safe for My Eyes?
+            <h2 className="text-4xl font-semibold text-customBg mb-4">
+            32
             </h2>
-            <p className="text-black">
-              Yes, safety is our top priority. All of our lenses are
-              FDA-approved and made from high-quality, breathable materials that
-              allow oxygen to reach your eyes, minimizing discomfort and
-              preventing dryness.
-            </p>
-          </motion.div>
-
-          {/* Question 5 */}
-          <motion.div
-            variants={slideIn("up", 1)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
-            className="p-6 shadow-lg rounded-xl"
-          >
-            <h2 className="text-2xl font-semibold text-customBg mb-4">
-              How Do I Order Rayn Look Contact Lenses?
-            </h2>
-            <p className="text-black">
-              Ordering is easy! Simply browse our collection, select the lenses
-              that best suit your needs, and proceed to checkout. We offer fast
-              and reliable shipping to ensure you get your lenses quickly and
-              safely.
+            <p className="text-black text-2xl">
+            Countries Providing Our Products
             </p>
           </motion.div>
         </div>

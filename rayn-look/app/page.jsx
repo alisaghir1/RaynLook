@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <>
-      <div className="h-screen relative">
+      <div className=" h-screen relative">
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent">
           <Image
             className="absolute z-[-10] top-0 right-0 w-full h-full xl:object-cover"
@@ -59,7 +59,6 @@ export default function Home() {
       <FirstSection />
       <SecondSection />
       <ThirdSection />
-
       <Footer />
     </>
   );

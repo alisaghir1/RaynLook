@@ -9,7 +9,7 @@ import { GiUsaFlag } from "react-icons/gi";
 
 const ThirdSection = () => {
   return (
-    <div className="bg-url('/hero.jpg)">
+    <div className="overflow-x-hidden">
       <motion.div
         variants={zoomIn("down", 1)}
         initial="hidden"

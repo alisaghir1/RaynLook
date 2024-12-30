@@ -5,6 +5,7 @@ import { slideIn } from "@/variants";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import hero from '../public/Hero.jpg'
 
 // Import Swiper styles
 import "swiper/css";
@@ -71,7 +72,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>
@@ -80,7 +81,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>
@@ -89,7 +90,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>
@@ -98,7 +99,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>
@@ -107,7 +108,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>
@@ -116,7 +117,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>
@@ -125,7 +126,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>
@@ -134,7 +135,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>
@@ -143,7 +144,7 @@ export default function SecondSection() {
             className="h-full object-cover"
             width={450}
             height={300}
-            src="/hero.jpg"
+            src={hero}
             alt="carousel-image"
           />
         </SwiperSlide>

@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 import hero from "../public/Hero.jpg";
-import FirstSection from "./components/firstSection/FirstSection";
-import SecondSection from "./components/secondSection/SecondSection";
-import ThirdSection from "./components/thirdSection/ThirdSection";
-import Footer from "./components/Footer";
+import FirstSection from "./FirstSection.jsx";
+import SecondSection from "./SecondSection.jsx";
+import ThirdSection from "./ThirdSection.jsx";
+import Footer from "./components/Footer.jsx";
 import Link from "next/link";
 import { slideIn } from "@/variants";
 import { motion } from "framer-motion";

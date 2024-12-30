@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -108,20 +109,20 @@ const Footer = () => {
         </p>
         <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
           <li>
-            <a
-              href="/"
+            <Link
+              href="/faq"
               className="text-sm text-white transition-colors duration-300 hover:text-customGold"
             >
               F.A.Q
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/"
+            <Link
+              href="/privacyPolicy"
               className="text-sm text-white transition-colors duration-300 hover:text-customGold"
             >
               Privacy Policy
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

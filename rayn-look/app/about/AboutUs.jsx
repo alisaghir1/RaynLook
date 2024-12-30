@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeIn, slideIn, zoomIn } from "@/variants";
+import { fadeIn, zoomIn } from "@/variants";
 import Link from "next/link";
 
 const AboutUs = () => {
@@ -12,7 +12,7 @@ const AboutUs = () => {
           {/* Left Section */}
           <div className="text-center md:text-left">
             <motion.div
-              variants={slideIn("down", 0.8)}
+              variants={fadeIn("down", 0.8)}
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.4 }}

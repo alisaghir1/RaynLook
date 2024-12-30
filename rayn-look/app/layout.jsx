@@ -18,23 +18,15 @@ export const metadata = {
     apple: "/logo.svg", // Apple touch icon
     maskIcon: { href: "/logo.svg", color: "#CBB26A" }, // Safari pinned tab
   },
-  title: "Rayn Look - Premium Contact Lenses",
+  title: "Home - Rayn Look | Premium Contact Lenses | Top Rated In Lebanon",
   description:
     "Experience unparalleled comfort and style with Rayn Look's premium contact lenses. Designed for natural beauty and exceptional vision, discover Lebanon's finest lenses today.",
   keywords:
-    "contact lenses, natural lenses, premium lenses, Rayn Look, Lebanon, eye comfort, fashion lenses",
+    "contact lenses, natural lenses, premium lenses, Rayn Look, Lebanon, eye comfort, fashion lenses, lenses in lebanon, lebanese lenses, lenses, best lenses in lebanon, products, eyes, with power, without power, degrees, without degrees, prescription lenses, prescription contacts, diopters",
   author: "Rayn Look",
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   charset: "UTF-8",
-  openGraph: {
-    title: "Rayn Look - Premium Contact Lenses",
-    description:
-      "Transform your vision with Rayn Look. Offering premium contact lenses that enhance your style while ensuring unmatched comfort.",
-    url: "https://rayn-look.com",
-    type: "website",
-    image: "https://raynlook.com/og-image.jpg",
-  },
 };
 
 export default function RootLayout({ children }) {

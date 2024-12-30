@@ -11,7 +11,7 @@ const FirstSection = () => {
         variants={zoomIn("up", 0.6)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.4 }}
         className="mb-1 text-3xl font-extrabold leading-tight text-white mt-10"
       >
         Our Services
@@ -20,7 +20,7 @@ const FirstSection = () => {
         variants={zoomIn("up", 0.8)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.4 }}
         className="mb-12 text-xl text-customGold"
       >
         Here are a few of the excellent services we provide at Rayn Look.
@@ -31,7 +31,7 @@ const FirstSection = () => {
             variants={fadeIn("left", 0.6)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="w-full mb-10 sm:mb-0 sm:w-1/2"
           >
             <div className="relative h-full ml-0 mr-0 sm:mr-10">
@@ -58,7 +58,7 @@ const FirstSection = () => {
             variants={fadeIn("right", 0.6)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="w-full sm:w-1/2"
           >
             <div className="relative h-full ml-0 md:mr-10">
@@ -86,7 +86,7 @@ const FirstSection = () => {
             variants={fadeIn("left", 0.8)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="w-full mb-10 sm:mb-0 sm:w-1/2"
           >
             <div className="relative h-full ml-0 mr-0 sm:mr-10">
@@ -113,7 +113,7 @@ const FirstSection = () => {
             variants={fadeIn("up", 1)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="w-full mb-10 sm:mb-0 sm:w-1/2"
           >
             <div className="relative h-full ml-0 mr-0 sm:mr-10">
@@ -140,7 +140,7 @@ const FirstSection = () => {
             variants={fadeIn("right", 0.8)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="w-full sm:w-1/2"
           >
             <div className="relative h-full ml-0 md:mr-10">

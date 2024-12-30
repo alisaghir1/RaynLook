@@ -15,7 +15,7 @@ const AboutUs = () => {
               variants={fadeIn("down", 0.8)}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.4 }}
             >
               <h2 className="text-3xl font-bold leading-tight text-customGold sm:text-4xl lg:text-5xl">
                 Meet The Owner
@@ -29,7 +29,7 @@ const AboutUs = () => {
               variants={fadeIn("left", 0.8)}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.4 }}
               className="max-w-lg mt-3 text-xl leading-relaxed text-white md:mt-8"
             >
               Founded in 2014 by Rayan Saghir, our story began in the heart of
@@ -43,7 +43,7 @@ const AboutUs = () => {
               variants={fadeIn("left", 1)}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.4 }}
               className="max-w-lg mt-3 text-xl leading-relaxed text-white md:mt-8"
             >
               Our products are designed to blend seamlessly with your natural
@@ -56,7 +56,7 @@ const AboutUs = () => {
               variants={fadeIn("left", 1.2)}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.4 }}
               className="mt-4 text-xl text-white md:mt-8"
             >
               <span className="relative inline-block">
@@ -81,7 +81,7 @@ const AboutUs = () => {
             variants={zoomIn("up", 1)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="relative"
           >
             <img

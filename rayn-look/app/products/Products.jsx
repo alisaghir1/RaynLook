@@ -59,7 +59,7 @@ const Products = () => {
         variants={slideIn("down", 1)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.4 }}
         className="text-center pt-20"
       >
         <h1 className="font-bold text-4xl mb-4 text-white">
@@ -80,7 +80,7 @@ const Products = () => {
             variants={zoomIn("up", 1)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             key={product.id}
             className="w-80 bg-dark shadow-md rounded-lg duration-500 hover:scale-105 hover:shadow-xl"
           >

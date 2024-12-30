@@ -10,7 +10,7 @@ const FAQ = () => {
         variants={slideIn("down", 1)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.4 }}
         className="mt-2 font-header text-3xl font-bold tracking-tight text-customGold sm:text-4xl"
       >
         Frequently Asked Questions
@@ -21,7 +21,7 @@ const FAQ = () => {
           variants={fadeIn("left", 0.4)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
         >
           <dt className="text-base font-semibold leading-7 text-customGold lg:col-span-3">
@@ -38,7 +38,7 @@ const FAQ = () => {
           variants={fadeIn("left", 0.5)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
         >
           <dt className="text-base font-semibold leading-7 text-customGold lg:col-span-3">
@@ -55,7 +55,7 @@ const FAQ = () => {
           variants={fadeIn("left", 0.6)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
         >
           <dt className="text-base font-semibold leading-7 text-customGold lg:col-span-3">
@@ -72,7 +72,7 @@ const FAQ = () => {
           variants={fadeIn("left", 0.7)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
         >
           <dt className="text-base font-semibold leading-7 text-customGold lg:col-span-3">
@@ -89,7 +89,7 @@ const FAQ = () => {
           variants={fadeIn("left", 0.8)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
         >
           <dt className="text-base font-semibold leading-7 text-customGold lg:col-span-3">
@@ -106,7 +106,7 @@ const FAQ = () => {
           variants={fadeIn("left", 0.9)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
         >
           <dt className="text-base font-semibold leading-7 text-customGold lg:col-span-3">
@@ -123,7 +123,7 @@ const FAQ = () => {
           variants={fadeIn("left", 1)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
         >
           <dt className="text-base font-semibold leading-7 text-customGold lg:col-span-3">
@@ -140,7 +140,7 @@ const FAQ = () => {
           variants={fadeIn("left", 1.1)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
         >
           <dt className="text-base font-semibold leading-7 text-customGold lg:col-span-3">

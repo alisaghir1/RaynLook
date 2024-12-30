@@ -27,7 +27,7 @@ const Navbar = () => {
       variants={zoomIn("up", 0.8)}
       initial="hidden"
       whileInView={"show"}
-      viewport={{ once: false, amount: 0.4 }}
+      viewport={{ once: true, amount: 0.4 }}
       className="py-4"
     >
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">

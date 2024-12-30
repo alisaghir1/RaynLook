@@ -14,7 +14,7 @@ const ThirdSection = () => {
         variants={zoomIn("down", 1)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.4 }}
         className="my-10 bg-black text-white flex flex-col xl:flex-row mx-5 gap-10 justify-center items-center"
       >
         <div className="flex flex-col ">
@@ -41,7 +41,7 @@ const ThirdSection = () => {
             variants={slideIn("down", 0.6)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="shadow-lg border py-4"
           >
             <h2 className="text-4xl font-semibold text-customBg mb-4">
@@ -57,7 +57,7 @@ const ThirdSection = () => {
             variants={slideIn("down", 0.6)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="shadow-lg  border py-4"
           >
             <h2 className="text-4xl font-semibold text-customBg mb-4">
@@ -73,7 +73,7 @@ const ThirdSection = () => {
             variants={slideIn("left", 0.8)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="shadow-lg border py-4"
           >
             <h2 className="text-4xl font-semibold text-customBg mb-4">
@@ -89,7 +89,7 @@ const ThirdSection = () => {
             variants={slideIn("right", 0.8)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="shadow-lg border py-4"
           >
             <h2 className="text-4xl font-semibold text-customBg mb-4">

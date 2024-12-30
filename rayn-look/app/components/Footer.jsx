@@ -11,22 +11,8 @@ const Footer = () => {
             title="Company"
             className="inline-flex items-center"
           >
-            <svg
-              className="w-8 text-white"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeMiterlimit="10"
-              stroke="currentColor"
-              fill="none"
-            >
-              <rect x="3" y="1" width="7" height="12"></rect>
-              <rect x="3" y="17" width="7" height="6"></rect>
-              <rect x="14" y="1" width="7" height="6"></rect>
-              <rect x="14" y="11" width="7" height="12"></rect>
-            </svg>
-            <span className="ml-2 text-xl font-bold tracking-wide text-white uppercase">
+
+            <span className="text-xl font-bold tracking-wide text-white uppercase">
               Rayn Look
             </span>
           </a>

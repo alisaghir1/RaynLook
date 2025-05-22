@@ -44,7 +44,7 @@ export default function Cart() {
         variants={slideIn("down", 0.6)}
         initial="hidden"
         animate="show"
-        className="text-4xl md:text-5xl font-extrabold my-4 text-white border border-customGold w-full p-5 rounded-xl"
+        className="text-3xl md:text-4xl font-extrabold my-4 text-white border border-customGold w-full p-5 rounded-xl"
       >
         Shopping Cart
       </motion.h1>

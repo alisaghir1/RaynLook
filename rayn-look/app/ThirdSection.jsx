@@ -15,7 +15,7 @@ const ThirdSection = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: true, amount: 0.4 }}
-        className="my-10 bg-black text-white flex flex-col xl:flex-row mx-5 gap-10 justify-center items-center"
+        className="my-10 bg-black text-white flex flex-col xl:flex-row  gap-10 justify-center items-center"
       >
         <div className="flex flex-col ">
         <h2 className="text-xl text-center text-customGold flex justify-center items-center gap-2"><span className="text-white"><FaShippingFast /></span>World wide Shipping</h2>

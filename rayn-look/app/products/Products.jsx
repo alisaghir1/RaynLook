@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MdAddShoppingCart } from "react-icons/md";
 import Image from "next/image";
 import hero from "../../public/Hero.jpg";
 import { motion } from "framer-motion";
-import { fadeIn, slideIn, zoomIn } from "@/variants";
-import Link from "next/link";
+import { zoomIn } from "@/variants";
+import { useCart } from "../../context/CartContext";
 
 const products = [
   {
@@ -53,23 +53,37 @@ const products = [
 ];
 
 const Products = () => {
+  const { addToCart } = useCart();
+  const [showToast, setShowToast] = useState(false);
+
+  // Disable buttons while toast is visible
+  const isDisabled = showToast;
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setShowToast(true);
+  };
+
+  // Auto hide toast after 3 seconds
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => setShowToast(false), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
+
   return (
     <>
-      <motion.div
-        variants={slideIn("down", 1)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.4 }}
-        className="text-center pt-20"
-      >
-        <h1 className="font-bold text-4xl mb-4 text-white">
-          Enhance Your Vision with Confidence
-        </h1>
-        <p className="text-2xl transition-all duration-300 ease-in-out hover:text-customGold text-customGold">
-          Explore our premium contact lenses for clarity, comfort, and
-          style—perfect for every need.
-        </p>
-      </motion.div>
+      {/* Centered modal toast */}
+      {showToast && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-green-600 text-white px-8 py-6 rounded-lg flex flex-col items-center shadow-lg max-w-xs w-full">
+            <p className="text-center text-lg font-semibold">
+              Item added successfully!
+            </p>
+          </div>
+        </div>
+      )}
 
       <section
         id="Products"
@@ -84,7 +98,7 @@ const Products = () => {
             key={product.id}
             className="w-80 bg-dark shadow-md rounded-lg duration-500 hover:scale-105 hover:shadow-xl"
           >
-            <Link href="#">
+            <div>
               <Image
                 src={product.image}
                 alt="Product"
@@ -101,12 +115,17 @@ const Products = () => {
                   <p className="text-lg font-semibold text-white cursor-auto my-3">
                     {product.price}
                   </p>
-                  <div className="ml-auto text-2xl transition-all duration-300 ease-in-out text-white border border-customGold p-2 rounded-lg hover:bg-customGold">
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="ml-auto text-2xl transition-all duration-300 ease-in-out text-white border border-customGold p-2 rounded-lg hover:bg-customGold disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label={`Add ${product.name} to cart`}
+                    disabled={isDisabled}
+                  >
                     <MdAddShoppingCart />
-                  </div>
+                  </button>
                 </div>
               </div>
-            </Link>
+            </div>
           </motion.div>
         ))}
       </section>

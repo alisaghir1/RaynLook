@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import hero from "../public/Hero.jpg";
+import FeauturedItems from "./FeaturedItems";
 import FirstSection from "./FirstSection.jsx";
 import SecondSection from "./SecondSection.jsx";
 import ThirdSection from "./ThirdSection.jsx";
@@ -15,7 +16,7 @@ export default function Home() {
       <div className=" h-screen relative">
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent">
           <Image
-            className="absolute z-[-10] top-0 right-0 w-full h-full xl:object-cover"
+            className="absolute z-[-10] top-0 right-0 w-full h-full object-cover"
             src={hero}
             alt="hero image"
           />
@@ -56,6 +57,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <FeauturedItems />
       <FirstSection />
       <SecondSection />
       <ThirdSection />

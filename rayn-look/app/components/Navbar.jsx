@@ -7,17 +7,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { zoomIn } from "@/variants";
 import { motion } from "framer-motion";
+import { useCart } from "../../context/CartContext";  // import your cart context here
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
 
-  // Toggle menu state
+  const { cartItems } = useCart(); // get cart items from context
+
+  // Calculate total quantity in cart
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle active link change
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
@@ -28,9 +32,9 @@ const Navbar = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: true, amount: 0.4 }}
-      className="py-4"
+      className="py-10 border-b border-b-customGold"
     >
-      <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+      <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4  mx-auto">
         <Link href="/" className="flex items-center">
           <Image
             width={200}
@@ -43,9 +47,15 @@ const Navbar = () => {
         <div className="flex items-center lg:order-2 ">
           <Link
             href="/cart"
-            className="flex  justify-center items-center gap-1 text-white border border-customGold hover:bg-customGold  font-lg rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0  transition-all duration-300 ease-in-out"
+            className="relative flex justify-center items-center gap-1 text-white border border-customGold hover:bg-customGold font-lg rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 transition-all duration-300 ease-in-out"
           >
-            <RiShoppingCart2Line /> Cart
+            <RiShoppingCart2Line />
+            Cart
+            {totalItems > 0 && (
+              <span className="absolute -top-1 -right-1 inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
+                {totalItems}
+              </span>
+            )}
           </Link>
           <button
             type="button"

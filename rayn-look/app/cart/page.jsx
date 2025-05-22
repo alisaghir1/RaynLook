@@ -124,7 +124,11 @@ export default function Cart() {
             })}
           </motion.div>
 
-          <div className="flex justify-end items-center mt-8 gap-5">
+          <motion.div
+        variants={slideIn("up", 0.6)}
+        initial="hidden"
+        animate="show"
+           className="flex justify-end items-center mt-8 gap-5">
             <span className="text-white mr-4 font-medium">Subtotal:</span>
             <span className="text-2xl font-extrabold text-customGold">${total.toFixed(2)}</span>
             <button
@@ -134,7 +138,7 @@ export default function Cart() {
             >
               Checkout via WhatsApp
             </button>
-          </div>
+          </motion.div>
         </>
       )}
     </div>

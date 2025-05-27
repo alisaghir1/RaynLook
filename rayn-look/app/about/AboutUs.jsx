@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn, zoomIn } from "@/variants";
 import Link from "next/link";
+import Image from "next/image";
 
 const AboutUs = () => {
   return (
@@ -84,10 +85,12 @@ const AboutUs = () => {
             viewport={{ once: true, amount: 0.4 }}
             className="relative"
           >
-            <img
-              className="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-110"
-              src="https://cdn.rareblocks.xyz/collection/celebration/images/team/1/business-woman.png"
+            <Image
+              className="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-110 mt-10"
+              src="/rayan.jpeg"
               alt="Founder Rayan Saghir"
+              width={1920}
+              height={1080}
             />
           </motion.div>
         </div>

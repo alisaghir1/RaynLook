@@ -6,24 +6,50 @@ import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import { zoomIn } from "@/variants";
-import { motion } from "framer-motion";
-import { useCart } from "../../context/CartContext";  // import your cart context here
+import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "../../context/CartContext";
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "Products", path: "/products" },
+  { name: "About us", path: "/about" },
+  { name: "FAQ", path: "/faq" },
+  { name: "Contact us", path: "/contact" },
+];
+
+const mobileMenuVariants = {
+  hidden: { height: 0, opacity: 0, overflow: "hidden" },
+  visible: {
+    height: "auto",
+    opacity: 1,
+    overflow: "hidden",
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  exit: {
+    height: 0,
+    opacity: 0,
+    overflow: "hidden",
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
 
-  const { cartItems } = useCart(); // get cart items from context
-
-  // Calculate total quantity in cart
+  const { cartItems } = useCart();
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const handleLinkClick = (link) => {
     setActiveLink(link);
+    setIsMenuOpen(false); // close menu after click
   };
 
   return (
@@ -32,19 +58,22 @@ const Navbar = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: true, amount: 0.4 }}
-      className="py-10 border-b border-b-customGold"
+      className="border-b border-b-customGold"
     >
-      <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4  mx-auto">
+      <div className="flex items-center justify-between max-w-screen-xl px-4 mx-auto ">
+        {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            width={200}
-            height={200}
-            src="/logo.svg"
-            className="mr-3 h-14 w-44"
+            width={500}
+            height={500}
+            src="/logo1.png"
+            className="mr-3 xl:h-52 h-40 xl:w-52 w-40"
             alt="Logo"
           />
         </Link>
-        <div className="flex items-center lg:order-2 ">
+
+        {/* Cart + Toggle */}
+        <div className="flex items-center lg:order-2">
           <Link
             href="/cart"
             className="relative flex justify-center items-center gap-1 text-white border border-customGold hover:bg-customGold font-lg rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 transition-all duration-300 ease-in-out"
@@ -61,56 +90,64 @@ const Navbar = () => {
             type="button"
             className="inline-flex items-center p-2 ml-1 text-sm text-customGold rounded-lg lg:hidden hover:text-white transition-all duration-300 ease-in-out"
             onClick={toggleMenu}
-            aria-controls="mobile-menu-2"
-            aria-expanded={isMenuOpen ? "true" : "false"}
+            aria-controls="mobile-menu"
+            aria-expanded={isMenuOpen}
           >
-            <span className="sr-only">Open main menu</span>
-            <CiMenuFries
-              className={`w-6 h-6 ${
-                isMenuOpen ? "hidden" : ""
-              } transition-all duration-300 ease-in-out`}
-            />
-            <IoMdClose
-              className={`w-6 h-6 outline-none ${
-                !isMenuOpen ? "hidden" : ""
-              } transition-all duration-300 ease-in-out`}
-            />
+            <span className="sr-only">Toggle menu</span>
+            {isMenuOpen ? <IoMdClose className="w-6 h-6" /> : <CiMenuFries className="w-6 h-6" />}
           </button>
         </div>
-        <div
-          className={`items-center transition-all duration-300 ease-in-out justify-between w-full lg:flex lg:w-auto lg:order-1 ${
-            isMenuOpen ? "block bg-gray text-white" : "hidden"
-          }`}
-          id="mobile-menu-2"
-        >
-          <ul className="flex flex-col mt-4 font-lg lg:flex-row lg:space-x-8 lg:mt-0">
-            {[
-              { name: "Home", path: "/" },
-              { name: "Products", path: "/products" },
-              { name: "About us", path: "/about" },
-              { name: "FAQ", path: "/faq" },
-              { name: "Contact us", path: "/contact" },
-            ].map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.path}
-                  onClick={() => [
-                    handleLinkClick(link.name),
-                    setIsMenuOpen(false),
-                  ]}
-                  className={`block py-2 pl-3 pr-4 ${
-                    activeLink === link.name
-                      ? "bg-customGold text-white lg:bg-transparent lg:text-customGold"
-                      : "text-white hover:text-customGold"
-                  } lg:p-0 lg:transition-colors lg:duration-300 lg:ease-in-out`}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+
+        {/* Desktop Nav */}
+        <div className="hidden lg:flex lg:space-x-8 lg:order-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.path}
+              onClick={() => handleLinkClick(link.name)}
+              className={`text-sm font-lg py-2 transition-colors duration-300 ${
+                activeLink === link.name
+                  ? "text-customGold"
+                  : "text-white hover:text-customGold"
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            key="mobileMenu"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={mobileMenuVariants}
+            className="lg:hidden  text-white px-4"
+          >
+            <ul className="flex flex-col space-y-2 py-4">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.path}
+                    onClick={() => handleLinkClick(link.name)}
+                    className={`block text-sm font-lg py-2 pl-3 pr-4 transition-colors duration-300 ${
+                      activeLink === link.name
+                        ? "text-customGold"
+                        : "hover:text-customGold"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

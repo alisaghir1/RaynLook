@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { zoomIn } from "@/variants";
 import Link from "next/link";
-import { products, categories, getProductsByCategory, getProductsByRating } from "../data/data.js";
+import { products, categories, getProductsByCategory, getProductsByRating } from "../data/data";
 
 const ProductGrid = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -60,7 +60,7 @@ const ProductGrid = () => {
           </p>
         </div>
 
-        {/* Filters */}
+        {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
             onClick={() => handleFilter('all')}
@@ -119,7 +119,7 @@ const ProductGrid = () => {
               key={product.id}
               className="group relative"
             >
-              {/* Product Card - Same as FeaturedItems but smaller */}
+              {/* Product Card */}
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-gray-100">
                 {/* Product Image */}
                 <div className="relative h-64 overflow-hidden">
@@ -151,7 +151,7 @@ const ProductGrid = () => {
                   </div>
                 </div>
 
-                {/* Product Info */}
+                {/* Product Details */}
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-lg font-bold text-gray-900 group-hover:text-customGold transition-colors truncate">
@@ -174,7 +174,7 @@ const ProductGrid = () => {
                     </span>
                   </div>
                   
-                  <Link href={`/products/${product.id}`}>
+                  <Link href={`/products/${product.slug}`}>
                     <button
                       disabled={!product.inStock}
                       className={`w-full py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center justify-center space-x-2 ${
@@ -183,8 +183,8 @@ const ProductGrid = () => {
                           : 'bg-gray-200 text-gray-500 cursor-not-allowed'
                       }`}
                     >
-                      <MdAddShoppingCart className="w-4 h-4" />
-                      <span>{product.inStock ? 'Add to Cart' : 'Out of Stock'}</span>
+                      <MdRemoveRedEye className="w-4 h-4" />
+                      <span>{product.inStock ? 'View Details' : 'Out of Stock'}</span>
                     </button>
                   </Link>
                 </div>

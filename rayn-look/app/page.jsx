@@ -153,15 +153,6 @@ export default function Home() {
                   <span>Shop Now</span>
                 </motion.button>
               </Link>
-              
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-customGold text-customGold px-8 py-4 rounded-full font-bold text-lg backdrop-blur-sm hover:bg-customGold/10 transition-all flex items-center space-x-3"
-              >
-                <FaPlay className="w-4 h-4" />
-                <span>Watch Our Story</span>
-              </motion.button>
             </motion.div>
           </div>
         </div>

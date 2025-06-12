@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { MdAddShoppingCart, MdRemoveRedEye, MdFavorite } from "react-icons/md";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { BsEyeFill } from "react-icons/bs";
@@ -7,11 +7,18 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { slideIn, zoomIn } from "@/variants";
 import Link from "next/link";
-import { getFeaturedProducts } from "./data/data.js";
+import { getFeaturedProducts } from "./data/data";
+import { useCart } from "../context/CartContext";
 
 const FeaturedItems = () => {
   // Get only featured products from data
   const featuredProducts = getFeaturedProducts();
+  
+  // Cart context
+  const { addToCart } = useCart();
+  
+  // Loading state for individual products
+  const [loadingStates, setLoadingStates] = useState({});
 
   const renderStars = (rating) => {
     const stars = [];
@@ -27,6 +34,22 @@ const FeaturedItems = () => {
     }
 
     return stars;
+  };
+
+  const handleAddToCart = async (product) => {
+    if (!product.inStock) return;
+    
+    // Set loading state for this specific product
+    setLoadingStates(prev => ({ ...prev, [product.id]: true }));
+    
+    // Simulate API call for better UX
+    await new Promise(resolve => setTimeout(resolve, 600));
+    
+    // Add to cart using context
+    addToCart(product, 1);
+    
+    // Clear loading state
+    setLoadingStates(prev => ({ ...prev, [product.id]: false }));
   };
 
   return (
@@ -99,13 +122,15 @@ const FeaturedItems = () => {
                   
                   {/* Action Buttons */}
                   <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-customGold hover:text-black transition-colors"
-                    >
-                      <MdRemoveRedEye className="w-5 h-5" />
-                    </motion.button>
+                    <Link href={`/products/${product.slug}`}>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-customGold hover:text-black transition-colors"
+                      >
+                        <MdRemoveRedEye className="w-5 h-5" />
+                      </motion.button>
+                    </Link>
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
@@ -152,19 +177,35 @@ const FeaturedItems = () => {
                   </div>
                   
                   <div className="mt-6 flex space-x-3">
-                    <Link href={`/products/${product.id}`} className="flex-1">
+                    <motion.button
+                      whileHover={{ scale: product.inStock ? 1.02 : 1 }}
+                      whileTap={{ scale: product.inStock ? 0.98 : 1 }}
+                      disabled={!product.inStock || loadingStates[product.id]}
+                      onClick={() => handleAddToCart(product)}
+                      className={`flex-1 py-3 rounded-full font-bold text-lg shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 ${
+                        product.inStock 
+                          ? 'bg-gradient-to-r from-customGold to-yellow-500 text-black hover:shadow-customGold/50' 
+                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      }`}
+                    >
+                      <MdAddShoppingCart className="w-5 h-5" />
+                      <span>
+                        {loadingStates[product.id] 
+                          ? 'Adding...' 
+                          : product.inStock 
+                            ? 'Add to Cart' 
+                            : 'Out of Stock'
+                        }
+                      </span>
+                    </motion.button>
+                    
+                    <Link href={`/products/${product.slug}`}>
                       <motion.button
-                        whileHover={{ scale: product.inStock ? 1.02 : 1 }}
-                        whileTap={{ scale: product.inStock ? 0.98 : 1 }}
-                        disabled={!product.inStock}
-                        className={`w-full py-3 rounded-full font-bold text-lg shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 ${
-                          product.inStock 
-                            ? 'bg-gradient-to-r from-customGold to-yellow-500 text-black hover:shadow-customGold/50' 
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                        }`}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="px-6 py-3 border-2 border-customGold text-customGold rounded-full font-bold hover:bg-customGold hover:text-black transition-all duration-300"
                       >
-                        <MdAddShoppingCart className="w-5 h-5" />
-                        <span>{product.inStock ? 'Add to Cart' : 'Out of Stock'}</span>
+                        Details
                       </motion.button>
                     </Link>
                   </div>

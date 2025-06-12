@@ -1,6 +1,7 @@
 export const products = [
   {
     id: 1,
+    slug: "crystal-vision-pro",
     name: "Crystal Vision Pro",
     description: "Daily Clear Lenses",
     price: "$45",
@@ -15,10 +16,23 @@ export const products = [
     category: "daily",
     inStock: true,
     description_long: "Experience unparalleled clarity with our premium daily contact lenses. Perfect for everyday wear with maximum comfort.",
-    features: ["UV Protection", "Moisture Lock", "Breathable Material", "Easy Application"]
+    features: ["UV Protection", "Moisture Lock", "Breathable Material", "Easy Application"],
+    gallery: [
+      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=800&fit=crop"
+    ],
+    specifications: {
+      material: "Silicone Hydrogel",
+      waterContent: "58%",
+      oxygenPermeability: "160 Dk/t",
+      replacement: "Daily",
+      uvProtection: "Yes"
+    }
   },
   {
     id: 2,
+    slug: "emerald-dreams",
     name: "Emerald Dreams",
     description: "Colored Contact Lenses",
     price: "$38",
@@ -33,10 +47,23 @@ export const products = [
     category: "colored",
     inStock: true,
     description_long: "Transform your look with stunning emerald green lenses that blend naturally with your eyes.",
-    features: ["Natural Look", "Color Enhancement", "Comfortable Wear", "FDA Approved"]
+    features: ["Natural Look", "Color Enhancement", "Comfortable Wear", "FDA Approved"],
+    gallery: [
+      "https://images.unsplash.com/photo-1585652757141-b4a997d78d24?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1594736797933-d0f06ba09d65?w=800&h=800&fit=crop"
+    ],
+    specifications: {
+      material: "Hydrogel",
+      waterContent: "45%",
+      oxygenPermeability: "130 Dk/t",
+      replacement: "Monthly",
+      colorType: "Enhancement"
+    }
   },
   {
     id: 3,
+    slug: "ocean-blue-elite",
     name: "Ocean Blue Elite",
     description: "Monthly Wear Collection",
     price: "$42",
@@ -51,10 +78,23 @@ export const products = [
     category: "monthly",
     inStock: true,
     description_long: "Dive into stunning ocean blue eyes with our premium monthly collection for extended wear comfort.",
-    features: ["Extended Wear", "High Oxygen", "Deposit Resistant", "Superior Comfort"]
+    features: ["Extended Wear", "High Oxygen", "Deposit Resistant", "Superior Comfort"],
+    gallery: [
+      "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=800&fit=crop"
+    ],
+    specifications: {
+      material: "Silicone Hydrogel",
+      waterContent: "48%",
+      oxygenPermeability: "175 Dk/t",
+      replacement: "Monthly",
+      colorType: "Opaque"
+    }
   },
   {
     id: 4,
+    slug: "golden-hour",
     name: "Golden Hour",
     description: "Luxury Eye Enhancement",
     price: "$52",
@@ -69,10 +109,23 @@ export const products = [
     category: "luxury",
     inStock: true,
     description_long: "Luxury honey gold lenses that capture the warmth of golden hour lighting in your eyes.",
-    features: ["Luxury Design", "Premium Material", "Natural Enhancement", "Long Lasting"]
+    features: ["Luxury Design", "Premium Material", "Natural Enhancement", "Long Lasting"],
+    gallery: [
+      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1585652757141-b4a997d78d24?w=800&h=800&fit=crop"
+    ],
+    specifications: {
+      material: "Premium Silicone Hydrogel",
+      waterContent: "55%",
+      oxygenPermeability: "180 Dk/t",
+      replacement: "Monthly",
+      luxuryFeatures: "Gold Tint Technology"
+    }
   },
   {
     id: 5,
+    slug: "midnight-gray",
     name: "Midnight Gray",
     description: "Professional Series",
     price: "$40",
@@ -87,10 +140,23 @@ export const products = [
     category: "professional",
     inStock: true,
     description_long: "Professional stormy gray lenses perfect for business settings and sophisticated looks.",
-    features: ["Professional Look", "Subtle Enhancement", "All-Day Comfort", "Professional Grade"]
+    features: ["Professional Look", "Subtle Enhancement", "All-Day Comfort", "Professional Grade"],
+    gallery: [
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1594736797933-d0f06ba09d65?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&h=800&fit=crop"
+    ],
+    specifications: {
+      material: "Hydrogel",
+      waterContent: "42%",
+      oxygenPermeability: "140 Dk/t",
+      replacement: "Bi-weekly",
+      professionalGrade: "Yes"
+    }
   },
   {
     id: 6,
+    slug: "hazel-magic",
     name: "Hazel Magic",
     description: "Natural Enhancement",
     price: "$35",
@@ -105,10 +171,23 @@ export const products = [
     category: "natural",
     inStock: true,
     description_long: "Natural hazel enhancement that brings out the beauty of your natural eye color.",
-    features: ["Natural Enhancement", "Subtle Color", "Daily Comfort", "Easy Care"]
+    features: ["Natural Enhancement", "Subtle Color", "Daily Comfort", "Easy Care"],
+    gallery: [
+      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=800&fit=crop"
+    ],
+    specifications: {
+      material: "Silicone Hydrogel",
+      waterContent: "50%",
+      oxygenPermeability: "155 Dk/t",
+      replacement: "Daily",
+      enhancementType: "Natural"
+    }
   },
   {
     id: 7,
+    slug: "sapphire-dreams",
     name: "Sapphire Dreams",
     description: "Weekly Collection",
     price: "$33",
@@ -123,10 +202,23 @@ export const products = [
     category: "weekly",
     inStock: true,
     description_long: "Rich sapphire blue lenses for a dramatic yet elegant transformation.",
-    features: ["Weekly Wear", "Rich Color", "Comfortable Fit", "Easy Maintenance"]
+    features: ["Weekly Wear", "Rich Color", "Comfortable Fit", "Easy Maintenance"],
+    gallery: [
+      "https://images.unsplash.com/photo-1594736797933-d0f06ba09d65?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1585652757141-b4a997d78d24?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=800&fit=crop"
+    ],
+    specifications: {
+      material: "Hydrogel",
+      waterContent: "43%",
+      oxygenPermeability: "135 Dk/t",
+      replacement: "Weekly",
+      colorIntensity: "High"
+    }
   },
   {
     id: 8,
+    slug: "rose-gold-luxe",
     name: "Rose Gold Luxe",
     description: "Limited Edition",
     price: "$65",
@@ -141,7 +233,20 @@ export const products = [
     category: "luxury",
     inStock: false,
     description_long: "Exclusive rose gold lenses with metallic undertones for a truly unique look.",
-    features: ["Limited Edition", "Metallic Finish", "Luxury Comfort", "Collector's Item"]
+    features: ["Limited Edition", "Metallic Finish", "Luxury Comfort", "Collector's Item"],
+    gallery: [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=800&fit=crop"
+    ],
+    specifications: {
+      material: "Premium Silicone Hydrogel",
+      waterContent: "60%",
+      oxygenPermeability: "190 Dk/t",
+      replacement: "Monthly",
+      limitedEdition: "Yes",
+      metallicFinish: "Rose Gold"
+    }
   }
 ];
 
@@ -156,6 +261,11 @@ export const getProductsByCategory = (category) => {
 
 export const getProductById = (id) => {
   return products.find(product => product.id === parseInt(id));
+};
+
+// New helper function for slug-based lookup
+export const getProductBySlug = (slug) => {
+  return products.find(product => product.slug === slug);
 };
 
 export const getInStockProducts = () => {

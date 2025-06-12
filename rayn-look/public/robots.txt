@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://raynlook.com
+
+# Sitemaps
+Sitemap: https://raynlook.com/sitemap.xml
+Sitemap: https://rayn-look.com/sitemap.xml

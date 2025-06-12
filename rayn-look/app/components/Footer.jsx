@@ -1,132 +1,305 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { BsEyeFill } from "react-icons/bs";
+import { 
+  FaFacebookF, 
+  FaTwitter, 
+  FaInstagram, 
+  FaLinkedinIn,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPaperPlane
+} from "react-icons/fa";
 
 const Footer = () => {
-  return (
-    <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="sm:col-span-2">
-          <a
-            href="/"
-            aria-label="Go home"
-            title="Company"
-            className="inline-flex items-center"
-          >
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
-            <span className="text-xl font-bold tracking-wide text-white uppercase">
-              Rayn Look
-            </span>
-          </a>
-          <div className="mt-6 lg:max-w-sm">
-            <p className="text-sm text-customGold">
-              Rayn Look offers premium contact lenses that combine comfort and
-              style. Whether you need a subtle enhancement or a bold
-              transformation, our lenses are designed to help you look and feel
-              your best.
-            </p>
-          </div>
-        </div>
-        <div className="space-y-2 text-sm">
-          <p className="text-base font-bold tracking-wide text-customGold">
-            Contacts
-          </p>
-          <div className="flex">
-            <p className="mr-1 text-customGold">Phone:</p>
-            <a
-              href="tel:+96178855963"
-              aria-label="Our phone"
-              title="Our phone"
-              className="transition-colors duration-300 text-white hover:text-customGold"
-            >
-              +961 78855963
-            </a>
-          </div>
-          <div className="flex">
-            <p className="mr-1 text-customGold">Email:</p>
-            <a
-              href="mailto:Raynlook@gmail.com"
-              aria-label="Our email"
-              title="Our email"
-              className="transition-colors duration-300 text-white hover:text-customGold"
-            >
-              Raynlook@gmail.com
-            </a>
-          </div>
-          <div className="flex">
-            <p className="mr-1 text-customGold">Address:</p>
-            <a
-              href="https://www.google.com/maps"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Our address"
-              title="Our address"
-              className="transition-colors duration-300 text-white hover:text-customGold"
-            >
-              Ain El Remmaneh, Beirut
-            </a>
-          </div>
-        </div>
-        <div>
-          <span className="text-base font-bold tracking-wide text-customGold">
-            Social
-          </span>
-          <div className="flex items-center mt-1 space-x-3">
-            <a
-              href="/"
-              className="text-white transition-colors duration-300 hover:text-customGold"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
-                <path d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"></path>
-              </svg>
-            </a>
-            <a
-              href="/"
-              className="text-white transition-colors duration-300 hover:text-customGold"
-            >
-              <svg viewBox="0 0 30 30" fill="currentColor" className="h-6">
-                <circle cx="15" cy="15" r="4"></circle>
-                <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z"></path>
-              </svg>
-            </a>
-            <a
-              href="/"
-              className="text-white transition-colors duration-300 hover:text-customGold"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
-                <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"></path>
-              </svg>
-            </a>
-          </div>
-          <p className="mt-4 text-sm text-white">
-            Follow us on social media for the latest updates, new products, and
-            special promotions from Rayn Look.
-          </p>
-        </div>
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubscribed(true);
+      setEmail("");
+      setTimeout(() => setIsSubscribed(false), 3000);
+    }
+  };
+
+  const footerLinks = {
+    company: [
+      { name: "About Us", href: "/about" },
+      { name: "Our Story", href: "/about" },
+      { name: "Contact", href: "/contact" },
+      { name: "FAQ", href: "/faq" }
+    ],
+    products: [
+      { name: "All Products", href: "/products" },
+      { name: "Daily Lenses", href: "/products" },
+      { name: "Monthly Lenses", href: "/products" },
+      { name: "Colored Lenses", href: "/products" }
+    ],
+    support: [
+      { name: "Contact Us", href: "/contact" },
+      { name: "FAQ", href: "/faq" },
+      { name: "Privacy Policy", href: "/privacyPolicy" },
+      { name: "Shopping Cart", href: "/cart" }
+    ]
+  };
+
+  return (
+    <footer className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(203,178,106,0.3) 0%, transparent 50%)`
+        }}></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 75% 75%, rgba(203,178,106,0.3) 0%, transparent 50%)`
+        }}></div>
       </div>
-      <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
-        <p className="text-sm text-white">
-          ©Copyright 2024 Rayn-look. All rights reserved.
-        </p>
-        <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-          <li>
-            <Link
-              href="/faq"
-              className="text-sm text-white transition-colors duration-300 hover:text-customGold"
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+          
+          {/* Brand Section */}
+          <div className="lg:col-span-4 space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center space-x-3"
             >
-              F.A.Q
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/privacyPolicy"
-              className="text-sm text-white transition-colors duration-300 hover:text-customGold"
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-customGold to-yellow-500 rounded-full flex items-center justify-center shadow-lg p-2">
+                  <Image
+                    src="/logo1.png"
+                    alt="Rayn Look Logo"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <div className="absolute inset-0 w-16 h-16 bg-gradient-to-br from-customGold to-yellow-500 rounded-full blur-md opacity-50"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold bg-gradient-to-r from-customGold to-yellow-400 bg-clip-text text-transparent">
+                  RAYN
+                </span>
+                <span className="text-sm font-medium text-customGold tracking-wider -mt-1">
+                  LOOK
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-gray-300 leading-relaxed"
+            >
+              Experience the world with clarity and style. Rayn Look offers premium contact lenses 
+              that combine comfort, quality, and elegance for every lifestyle.
+            </motion.p>
+
+            {/* Social Media */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex items-center space-x-4"
+            >
+              <span className="text-customGold font-medium">Follow Us:</span>
+              <div className="flex space-x-3">
+                {[
+                  { icon: FaFacebookF, href: "https://facebook.com", color: "hover:text-blue-400" },
+                  { icon: FaTwitter, href: "https://twitter.com", color: "hover:text-blue-400" },
+                  { icon: FaInstagram, href: "https://instagram.com", color: "hover:text-pink-400" },
+                  { icon: FaLinkedinIn, href: "https://linkedin.com", color: "hover:text-blue-600" }
+                ].map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, y: -2 }}
+                    className={`w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white transition-all duration-300 ${social.color} hover:bg-white/20`}
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Links Sections */}
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {Object.entries(footerLinks).map(([category, links], index) => (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                className="space-y-4"
+              >
+                <h3 className="text-lg font-semibold text-customGold capitalize">
+                  {category}
+                </h3>
+                <ul className="space-y-3">
+                  {links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <Link
+                        href={link.href}
+                        className="text-gray-300 hover:text-customGold transition-colors duration-300 hover:translate-x-1 transform inline-block"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Newsletter Section */}
+          <div className="lg:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="space-y-6"
+            >
+              <div>
+                <h3 className="text-lg font-semibold text-customGold mb-2">
+                  Stay Updated
+                </h3>
+                <p className="text-gray-300 text-sm">
+                  Get the latest news and exclusive offers delivered to your inbox.
+                </p>
+              </div>
+
+              <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+                <div className="relative">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-customGold focus:bg-white/20 transition-all duration-300"
+                    required
+                  />
+                </div>
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full bg-gradient-to-r from-customGold to-yellow-500 text-black py-3 rounded-lg font-medium flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300"
+                >
+                  <FaPaperPlane className="w-4 h-4" />
+                  <span>Subscribe</span>
+                </motion.button>
+              </form>
+
+              {isSubscribed && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-green-400 text-sm text-center font-medium"
+                >
+                  ✓ Successfully subscribed!
+                </motion.div>
+              )}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Contact Information */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-white/10"
+        >
+          <div className="flex items-center space-x-3 text-gray-300">
+            <div className="w-10 h-10 bg-customGold/20 rounded-full flex items-center justify-center">
+              <FaPhone className="w-4 h-4 text-customGold" />
+            </div>
+            <div>
+              <p className="text-sm text-customGold">Phone</p>
+              <a href="tel:+96178855963" className="hover:text-customGold transition-colors">
+                +961 78855963
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-3 text-gray-300">
+            <div className="w-10 h-10 bg-customGold/20 rounded-full flex items-center justify-center">
+              <FaEnvelope className="w-4 h-4 text-customGold" />
+            </div>
+            <div>
+              <p className="text-sm text-customGold">Email</p>
+              <a href="mailto:Raynlook@gmail.com" className="hover:text-customGold transition-colors">
+                Raynlook@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-3 text-gray-300">
+            <div className="w-10 h-10 bg-customGold/20 rounded-full flex items-center justify-center">
+              <FaMapMarkerAlt className="w-4 h-4 text-customGold" />
+            </div>
+            <div>
+              <p className="text-sm text-customGold">Location</p>
+              <a 
+                href="https://maps.google.com/?q=Ain+El+Remmaneh+Beirut" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-customGold transition-colors"
+              >
+                Ain El Remmaneh, Beirut
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Bottom Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 space-y-4 md:space-y-0"
+        >
+          <p className="text-gray-400 text-sm">
+            © 2024 Rayn Look. All rights reserved.
+          </p>
+          
+          <div className="flex items-center space-x-6">
+            <Link 
+              href="/privacyPolicy" 
+              className="text-gray-400 hover:text-customGold text-sm transition-colors"
             >
               Privacy Policy
             </Link>
-          </li>
-        </ul>
+            <Link 
+              href="/faq" 
+              className="text-gray-400 hover:text-customGold text-sm transition-colors"
+            >
+              FAQ
+            </Link>
+            <Link 
+              href="/contact" 
+              className="text-gray-400 hover:text-customGold text-sm transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </footer>
   );
 };
 

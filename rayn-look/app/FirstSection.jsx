@@ -141,7 +141,7 @@ const FirstSection = () => {
               viewport={{ once: true, amount: 0.3 }}
               className="group relative"
             >
-              <div className="relative h-full bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+              <div className="relative h-full bg-gray-800 border border-gray-700 rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl hover:border-customGold/50 transition-all duration-500 hover:-translate-y-2">
                 
                 {/* Card Header with Icon */}
                 <div className={`relative h-32 bg-gradient-to-br ${service.color} flex items-center justify-center`}>
@@ -160,21 +160,21 @@ const FirstSection = () => {
 
                 {/* Card Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-customGold transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-customGold transition-colors">
                     {service.title}
                   </h3>
                   
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
                     {service.description}
                   </p>
                   
                   {/* Features List */}
                   <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-gray-800 mb-2">Key Features:</h4>
+                    <h4 className="text-sm font-semibold text-gray-200 mb-2">Key Features:</h4>
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-customGold rounded-full"></div>
-                        <span className="text-sm text-gray-600">{feature}</span>
+                        <span className="text-sm text-gray-400">{feature}</span>
                       </div>
                     ))}
                   </div>
